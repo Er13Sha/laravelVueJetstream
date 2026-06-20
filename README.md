@@ -5,7 +5,7 @@
 ## Развёртывание
 
 ```bash
-./setup.sh
+Запустить ./setup.sh
 ```
 
 **http://localhost:8088**
