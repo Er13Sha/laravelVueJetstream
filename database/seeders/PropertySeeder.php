@@ -59,7 +59,9 @@ class PropertySeeder extends Seeder
                 if (fake()->boolean(70)) {
                     $sourcePath = fake()->randomElement($sourceImages);
                     $extension = pathinfo($sourcePath, PATHINFO_EXTENSION);
-                    $newFileName = 'properties/' . \Illuminate\Support\Str::random(40) . '.' . $extension;
+                    $folder = 'properties/' . Str::uuid();
+                    Storage::disk('public')->makeDirectory($folder);
+                    $newFileName = $folder . '/preview.' . $extension;
 
                     File::copy($sourcePath, Storage::disk('public')->path($newFileName));
 
