@@ -20,8 +20,8 @@ class PropertyFactory extends Factory
         $picked = self::$imagePool !== [] && $this->faker->boolean(70)
             ? $this->faker->randomElement(self::$imagePool)
             : [
-                'image' => 'images/preview.jpg',
-                'preview' => 'images/preview.jpg'
+                'image' => null,
+                'preview' => null
             ];
 
         return [

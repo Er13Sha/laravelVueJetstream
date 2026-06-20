@@ -28,11 +28,7 @@ php artisan config:clear || true
 php artisan storage:link 2>/dev/null || true
 php artisan migrate --force
 
-USERS="$(php artisan tinker --execute='echo \App\Models\User::query()->count();' 2>/dev/null | tr -dc '0-9')"
-if [ -z "$USERS" ] || [ "$USERS" = "0" ]; then
-    echo "db:seed…"
-    php artisan db:seed --force || true
-fi
+php artisan db:seed --force
 
 echo "PHP-FPM запущен."
 exec "$@"
