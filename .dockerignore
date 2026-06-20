@@ -11,4 +11,3 @@ storage/framework/views/*
 .env
 npm-debug.log
 yarn-error.log
-# .env.docker и docker/ нужны prod-сборке — НЕ игнорируем.
